@@ -1,0 +1,22 @@
+{include file="public/header"}
+
+<div>商品管理一览表
+	<a href="{:url('Good/add')}" class="btn btn-success">添加</a>
+	<a href="{:url('Good/listmanger')}" class="btn btn-info">分类管理</a>
+</div>
+
+{include file="public/footer"}
+<script type="text/javascript">
+	window.onload=function(aa){
+		var admin_name=window.location.search.split('=')[1]
+		var o = document.getElementById('admin_name')
+		o.innerHTML = admin_name
+	}
+
+	tuichu=function(){
+		var tuichu = window.confirm("是否确定退出？")
+		if(tuichu){
+			window.location.href = "{:url('Index/login')}"
+		}
+	}
+</script>
